@@ -308,32 +308,32 @@ function toggleLike(icon, likeCountId) {
   }
 
 
-  // Check if the navigator supports the share API
-  const shareButtons = document.querySelectorAll('.share-button');
+  // Check if the navigator supports the share API >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 5/2/2025 Previous Code ========================<<<<<<<<<<<<<<<<<
+//   const shareButtons = document.querySelectorAll('.share-button');
 
-  shareButtons.forEach(button => {
-    button.addEventListener('click', async () => {
-      const shareDialogId = button.getAttribute('data-div');
-      const shareDialog = document.getElementById(shareDialogId);
+//   shareButtons.forEach(button => {
+//     button.addEventListener('click', async () => {
+//       const shareDialogId = button.getAttribute('data-div');
+//       const shareDialog = document.getElementById(shareDialogId);
   
-      if (navigator.share) {
-        const shareData = {
-          title: 'My Awesome Website',
-          text: 'Check out this cool content!',
-          url: window.location.href, // Replace with your desired URL
-        };
+//       if (navigator.share) {
+//         const shareData = {
+//           title: 'My Awesome Website',
+//           text: 'Check out this cool content!',
+//           url: window.location.href, // Replace with your desired URL
+//         };
   
-        try {
-          await navigator.share(shareData);
-          console.log('Shared successfully! 🎉');
-        } catch (error) {
-          console.error('Error sharing:', error);
-        }
-      } else {
-        shareDialog.classList.toggle("active");
-      }
-    });
-  });
+//         try {
+//           await navigator.share(shareData);
+//           console.log('Shared successfully! 🎉');
+//         } catch (error) {
+//           console.error('Error sharing:', error);
+//         }
+//       } else {
+//         shareDialog.classList.toggle("active");
+//       }
+//     });
+//   });
 
 //   Trying to add upload Post Feature
 // function showPostForm() {
@@ -494,7 +494,7 @@ document.addEventListener('click', hideForm);
 //     // Append new post to the feed container
 //     document.querySelector(".middle").innerHTML += postHTML;
 // }
-// =====================================================>
+// ======================= Upload Post Section ==============================>
 
     document.addEventListener('DOMContentLoaded', function () {
         const createPostButton = document.getElementById('upload-button');
@@ -535,19 +535,290 @@ document.addEventListener('click', hideForm);
     
 
 // ===================================== END ==========================
+// =========== For Status Div Try 1 ==========================
+document.getElementById('addStoryButton').addEventListener('click', function() {
+    // Create a new story div
+    const newStory = document.createElement('div');
+    newStory.className = 'story';
+    
+    // Create profile picture container
+    const profilePicDiv = document.createElement('div');
+    profilePicDiv.className = 'profile-pic';
+    
+    // Create img element for the profile picture
+    const img = document.createElement('img');
+    img.src = './images/my-profile-pic.jpeg'; // Change to your default image
+    img.alt = '';
+    
+    // Append img to profile picture div
+    profilePicDiv.appendChild(img);
+    
+    // Create name paragraph
+    const nameParagraph = document.createElement('p');
+    nameParagraph.className = 'name';
+    nameParagraph.textContent = 'New Story'; // Change as needed
+    
+    // Append profile picture and name to new story
+    newStory.appendChild(profilePicDiv);
+    newStory.appendChild(nameParagraph);
+    
+    // Append new story to the stories container
+    document.querySelector('.stories').appendChild(newStory);
+});
 
-// ========== >> PWA 9/2/2025
+// ===================================== END ==========================
 
+
+// Adding Story Try 2 =================================================
+
+document.getElementById('addStoryButton').addEventListener('click', function() {
+    // Create a new story div
+    const newStory = document.createElement('div');
+    newStory.className = 'story';
+    
+    // Create profile picture container
+    const profilePicDiv = document.createElement('div');
+    profilePicDiv.className = 'profile-pic';
+    
+    // Create img element for the profile picture
+    const img = document.createElement('img');
+    img.src = './images/my-profile-pic.jpeg'; // Change to your default image
+    img.alt = '';
+    
+    // Append img to profile picture div
+    profilePicDiv.appendChild(img);
+    
+    // Create name paragraph
+    const nameParagraph = document.createElement('p');
+    nameParagraph.className = 'name';
+    nameParagraph.textContent = 'New Story'; // Change as needed
+    
+    // Append profile picture and name to new story
+    newStory.appendChild(profilePicDiv);
+    newStory.appendChild(nameParagraph);
+    
+    // Add the slide-in animation class
+    newStory.classList.add('slide-in');
+    
+    // Insert the new story at the beginning of the stories container
+    const storiesContainer = document.querySelector('.stories');
+    storiesContainer.insertBefore(newStory, storiesContainer.firstChild);
+});
+
+// Share on Both Phone and PC 5/2/2025 ===========================================
+
+const shareButtons = document.querySelectorAll('.share-button');
+
+shareButtons.forEach(button => {
+  button.addEventListener('click', async () => {
+    const shareDialogId = button.getAttribute('data-div');
+    const shareDialog = document.getElementById(shareDialogId);
+  
+    // Check if the device supports the Web Share API
+    if (navigator.share) {
+      const shareData = {
+        title: 'My Awesome Website',
+        text: 'Check out this cool content!',
+        url: window.location.href, // Use the current page URL or replace it
+      };
+  
+      try {
+        await navigator.share(shareData);
+        console.log('Shared successfully! 🎉');
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+      // Fallback for devices that don't support the Web Share API
+      if (shareDialog) {
+        shareDialog.classList.toggle("active"); // Toggle the share dialog visibility
+      } else {
+        console.warn('Share dialog not found.');
+      }
+    }
+  });
+});
+
+
+// Application making Try 1 =============== >> 8/2/2025 << =========================== 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
   }
+  
+  
+//   Adding Story Try 4 ============= >> 13/2/2025 << ================
 
-//   ============== PWA END << ===============
+// // Function to Add a New Story When a File is Selected
+// function addStory(event) {
+//     const file = event.target.files[0]; // Get the selected file
+//     if (!file) return; // If no file selected, exit function
+
+//     const reader = new FileReader(); // Create FileReader to read file data
+//     reader.onload = function(e) {
+//         const storiesContainer = document.getElementById("storiesContainer");
+
+//         // Create new story element
+//         const newStory = document.createElement("div");
+//         newStory.classList.add("story");
+//         newStory.style.backgroundImage = `url(${e.target.result})`; // Set uploaded file as background
+
+//         // Create Profile Picture Container
+//         const profilePic = document.createElement("div");
+//         profilePic.classList.add("profile-pic");
+//         const img = document.createElement("img");
+//         img.src = e.target.result; // Use the uploaded image as profile pic
+//         profilePic.appendChild(img);
+
+//         // Create Story Name
+//         const name = document.createElement("p");
+//         name.classList.add("name");
+//         name.textContent = "New Story"; // Default story name
+
+//         // Append Profile Pic and Name to Story
+//         newStory.appendChild(profilePic);
+//         newStory.appendChild(name);
+
+//         // Add New Story at the Beginning of Stories List
+//         storiesContainer.prepend(newStory);
+//     };
+//     reader.readAsDataURL(file); // Read file as Data URL
+// }
+
+// Function to Add a New Story When a File is Selected
+function addStory(event) {
+    const file = event.target.files[0]; // Get the selected file
+    if (!file) return; // If no file selected, exit function
+
+    const reader = new FileReader(); // Create FileReader to read file data
+    reader.onload = function(e) {
+        const storiesContainer = document.getElementById("storiesContainer");
+
+        // Create new story element
+        const newStory = document.createElement("div");
+        newStory.classList.add("story");
+        newStory.style.backgroundImage = `url(${e.target.result})`; // Set uploaded file as background
+
+        // Create Profile Picture Container
+        const profilePic = document.createElement("div");
+        profilePic.classList.add("profile-pic");
+        const img = document.createElement("img");
+        img.src = e.target.result; // Use the uploaded image as profile pic
+        profilePic.appendChild(img);
+
+        // Create Story Name
+        const name = document.createElement("p");
+        name.classList.add("name");
+        name.textContent = "New Story"; // Default story name
+
+        // Append Profile Pic and Name to Story
+        newStory.appendChild(profilePic);
+        newStory.appendChild(name);
+
+        // Add New Story at the Beginning of Stories List
+        storiesContainer.prepend(newStory);
+    };
+    reader.readAsDataURL(file); // Read file as Data URL
+}
+
+//===================== End  << ==========================
+
+// Adding Story with Scoll Bar >> 15/2/2025 << ======================
+
+// Function to Add a New Story When a File is Selected
+function addStory(event) {
+    const file = event.target.files[0]; // Get the selected file
+    if (!file) return; // If no file selected, exit function
+
+    const reader = new FileReader(); // Create FileReader to read file data
+    reader.onload = function(e) {
+        const storiesContainer = document.getElementById("storiesContainer");
+
+        // Create new story element
+        const newStory = document.createElement("div");
+        newStory.classList.add("story");
+        newStory.style.backgroundImage = `url(${e.target.result})`; // Set uploaded file as background
+
+        // Create Profile Picture Container
+        const profilePic = document.createElement("div");
+        profilePic.classList.add("profile-pic");
+        const img = document.createElement("img");
+        img.src = e.target.result; // Use the uploaded image as profile pic
+        profilePic.appendChild(img);
+
+        // Create Story Name
+        const name = document.createElement("p");
+        name.classList.add("name");
+        name.textContent = "New Story"; // Default story name
+
+        // Append Profile Pic and Name to Story
+        newStory.appendChild(profilePic);
+        newStory.appendChild(name);
+
+        // Add New Story at the Beginning of Stories List
+        storiesContainer.prepend(newStory);
+
+        // Auto-scroll to show the newly added story
+        const middleContainer = document.querySelector(".middle");
+        middleContainer.scrollLeft = 0; // Scroll to the start
+    };
+    reader.readAsDataURL(file); // Read file as Data URL
+}
+
+
+// // Function to Replace the First Story Instead of Shifting Others
+function addStory(event) {
+    const file = event.target.files[0]; // Get the selected file
+    if (!file) return; // If no file is selected, exit function
+
+    const reader = new FileReader(); // Create FileReader to read file data
+    reader.onload = function(e) {
+        const storiesContainer = document.getElementById("storiesContainer");
+        const firstStory = storiesContainer.firstElementChild; // Get the first story
+
+        if (firstStory) {
+            // If there is an existing first story, replace its content
+            firstStory.style.backgroundImage = `url(${e.target.result})`; // Update background image
+            
+            const profilePic = firstStory.querySelector("./images/my-profile-pic.jpeg");
+            if (profilePic) {
+                profilePic.src = e.target.result; // Update profile picture
+            }
+
+            const name = firstStory.querySelector(".name");
+            if (name) {
+                name.textContent = "New Story"; // Change name if needed
+            }
+        } else {
+            // If no story exists, create a new one
+            const newStory = document.createElement("div");
+            newStory.classList.add("story");
+            newStory.style.backgroundImage = `url(${e.target.result})`; // Set uploaded file as background
+
+            // Create Profile Picture Container
+            const profilePic = document.createElement("div");
+            profilePic.classList.add("profile-pic");
+            const img = document.createElement("img");
+            img.src = e.target.result; // Use the uploaded image as profile pic
+            profilePic.appendChild(img);
+
+            // Create Story Name
+            const name = document.createElement("p");
+            name.classList.add("name");
+            name.textContent = "New Story"; // Default story name
+
+            // Append Profile Pic and Name to Story
+            newStory.appendChild(profilePic);
+            newStory.appendChild(name);
+
+            // Append the new story to the container
+            storiesContainer.appendChild(newStory);
+        }
+    };
+    reader.readAsDataURL(file); // Read file as Data URL
+}
