@@ -1,4 +1,3 @@
-
 :root{
 --primary-color-hue: 252;
 --dark-color-lightness: 17%;
@@ -992,7 +991,8 @@ main .container .right{
     min-height: 3rem;
     font-size: 1.2rem;
     border: none;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
+
   }
   
   .dropzone-actions button[type='reset'] {
@@ -1065,3 +1065,271 @@ main .container .right{
 }
 
 
+/* Button Added try 1 19/10/24 */
+
+#addStoryButton {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* End */
+
+/* Share Feature Android, iOS PC try ==============>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 5/2/2025 <<<<<<<<<<<<========================================*/  
+
+.share-dialog {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust width to fit mobile screens */
+    max-width: 350px; 
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+  }
+  
+  .share-dialog.active {
+    display: block; /* Show when active */
+  }
+  
+
+/* END */
+
+/* Story Adding Try 4 ============ >> 13/2/2025 <<  Delete =========== */
+
+/* Changed "container" to "story-wrapper" */
+/* .story-wrapper {
+    /* width: 90%;
+    margin: 20px auto; 
+}  */
+
+/* Scrollable Stories Container */
+/* .middle {
+     /* overflow-x: auto; Enables horizontal scrolling */
+    /* white-space: nowrap; */
+    /* padding-bottom: 10px;  
+}  */
+
+/* Story List */
+/* .stories {
+    /* display: flex; */
+    /* gap: 0.5rem; 
+} */
+
+/* Individual Story Styling */
+/* .story { */
+    /* position: relative; */
+    /* width: 100px; Fixed width for consistency */
+    /* height: 150px; */
+    /* border-radius: var(--card-border-radius); */
+    /* display: flex;  */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: flex-end; 
+    color: white;  */
+  /* font-size: 0.99rem; */
+    /* overflow: hidden; */
+    /* padding: var(--card-padding); */
+    /* background: gray; Default background */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* flex-shrink: 0; Prevents shrinking */
+/* } */
+
+/* Gradient Overlay for Better Text Visibility */
+/* .story::before { */
+    /* content: ""; */
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* width: 100%; */
+    /* height: 50%; */
+    /* background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); */
+/* } */
+
+/* Profile Picture Styling */
+/* .story .profile-pic {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    overflow: hidden;
+} */
+
+/* .story .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* Name of the Story */
+/* .story .name {
+    z-index: 2;
+    padding: 5px;
+} */
+
+/* Scrollbar Styling */
+/* .middle::-webkit-scrollbar {
+    height: 8px;
+} */
+
+/* .middle::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+} */
+
+/* End Story adding Try 4 */
+
+
+/* Adding new Story with Scroll bar 15/2/2025 */
+
+/* Scrollable Stories Container */
+/* Make the story-wrapper scrollable */
+/* .story-wrapper { */
+    /* width: 90%; */
+    /* margin: 20px auto; */
+    /* overflow-x: auto; Enables horizontal scrolling */
+    /* white-space: nowrap; Prevents wrapping of stories */
+    /* max-width: 100%; */
+    /* padding-bottom: 10px; */
+/* } */
+
+/* Styling Scrollbar for story-wrapper */
+/* .story-wrapper::-webkit-scrollbar { */
+    /* height: 8px; Visible scrollbar height */
+/* } */
+
+/* .story-wrapper::-webkit-scrollbar-thumb { */
+    /* background: var(--color-primary); Color of scrollbar */
+    /* border-radius: 10px; */
+/* } */
+
+
+/* 15/2/2025 */
+
+/* Changed "container" to "story-wrapper" */
+/* .story-wrapper { */
+    /* width: 90%; */
+    /* margin: 20px auto; */
+    /* overflow-x: auto; Enables horizontal scrolling */
+    /* white-space: nowrap; Prevents wrapping of stories */
+    /* max-width: 100%; */
+    /* padding-bottom: 10px; */
+/* } */
+
+
+/* =================================== DELETE ================================================================ */
+
+/* Styling the Add Story Button */
+.add-story-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 100px;
+    /* margin-bottom: 15px; */
+}
+
+/* Scrollable Stories Container */
+/* .middle { */
+    /* overflow-x: auto; Enables horizontal scrolling */
+    /* white-space: nowrap; */
+    /* padding-bottom: 10px;  */
+/* } */
+
+/* Story List */
+/* .stories { */
+    /* display: flex; */
+    /* gap: 0.5rem; */
+/* } */
+
+/* Individual Story Styling */
+/* .story {
+    position: relative;
+    border-radius: var(--card-border-radius);
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    font-size: 0.75rem;
+    overflow: hidden;
+    padding: var(--card-padding);
+    background-position: center;
+} */
+
+/* Gradient Overlay for Better Text Visibility */
+/* .story::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+} */
+
+/* Profile Picture Styling */
+.story .profile-pic {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    overflow: hidden;
+}
+
+.story .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name of the Story - Placed at Bottom */
+.story .name {
+    position: absolute;
+    bottom: 5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px;
+    /* background: rgba(0, 0, 0, 0.5);  */
+    border-radius: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Scrollbar Styling 
+.story-wrapper::-webkit-scrollbar {
+    height: 8px; /* Visible scrollbar height 
+}
+
+.story-wrapper::-webkit-scrollbar-thumb {
+    background: var(--color-primary);  Color of scrollbar 
+    border-radius: 10px;
+} */
+
+.profile-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    /* padding: 0; Removes extra padding */
+    /* transition: transform 0.2s ease-in-out; */
+    /* display: inline-flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+}
